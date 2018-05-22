@@ -21,6 +21,14 @@ class JCApiClientTests: XCTestCase {
         super.tearDown()
     }
     
+    func testHelloWorld() {
+        
+        let stringTest = "Hello World"
+        let event = Event(title: stringTest)
+        
+        XCTAssert(stringTest == event.title)
+    }
+    
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

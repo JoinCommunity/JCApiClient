@@ -10,6 +10,7 @@
 		3918442D20B442180009256D /* JCApiClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3918442320B442180009256D /* JCApiClient.framework */; };
 		3918443220B442180009256D /* JCApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918443120B442180009256D /* JCApiClientTests.swift */; };
 		3918443420B442180009256D /* JCApiClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 3918442620B442180009256D /* JCApiClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3918448620B442F20009256D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918448520B442F20009256D /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		3918442C20B442180009256D /* JCApiClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JCApiClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3918443120B442180009256D /* JCApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCApiClientTests.swift; sourceTree = "<group>"; };
 		3918443320B442180009256D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3918448520B442F20009256D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				3918442620B442180009256D /* JCApiClient.h */,
 				3918442720B442180009256D /* Info.plist */,
+				3918448520B442F20009256D /* Event.swift */,
 			);
 			path = JCApiClient;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					3918442220B442180009256D = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0930;
 					};
 					3918442B20B442180009256D = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3918448620B442F20009256D /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +344,7 @@
 		3918443820B442180009256D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -356,6 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.construtor.JCApiClient;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +371,7 @@
 		3918443920B442180009256D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,6 +397,7 @@
 		3918443B20B442180009256D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6CEJZ72DDU;
 				INFOPLIST_FILE = JCApiClientTests/Info.plist;
@@ -407,6 +416,7 @@
 		3918443C20B442180009256D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6CEJZ72DDU;
 				INFOPLIST_FILE = JCApiClientTests/Info.plist;
