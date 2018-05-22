@@ -11,6 +11,7 @@
 		3918443220B442180009256D /* JCApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918443120B442180009256D /* JCApiClientTests.swift */; };
 		3918443420B442180009256D /* JCApiClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 3918442620B442180009256D /* JCApiClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3918448620B442F20009256D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918448520B442F20009256D /* Event.swift */; };
+		3918449620B447560009256D /* ServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918449520B447560009256D /* ServiceApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		3918443120B442180009256D /* JCApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCApiClientTests.swift; sourceTree = "<group>"; };
 		3918443320B442180009256D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3918448520B442F20009256D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		3918449520B447560009256D /* ServiceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,8 @@
 			children = (
 				3918442620B442180009256D /* JCApiClient.h */,
 				3918442720B442180009256D /* Info.plist */,
-				3918448520B442F20009256D /* Event.swift */,
+				3918449820B447FB0009256D /* Model */,
+				3918449720B447F20009256D /* Services */,
 			);
 			path = JCApiClient;
 			sourceTree = "<group>";
@@ -87,6 +90,22 @@
 				3918443320B442180009256D /* Info.plist */,
 			);
 			path = JCApiClientTests;
+			sourceTree = "<group>";
+		};
+		3918449720B447F20009256D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3918449520B447560009256D /* ServiceApi.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3918449820B447FB0009256D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3918448520B442F20009256D /* Event.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3918449620B447560009256D /* ServiceApi.swift in Sources */,
 				3918448620B442F20009256D /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
