@@ -12,6 +12,9 @@
 		3918443420B442180009256D /* JCApiClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 3918442620B442180009256D /* JCApiClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3918448620B442F20009256D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918448520B442F20009256D /* Event.swift */; };
 		3918449620B447560009256D /* ServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918449520B447560009256D /* ServiceApi.swift */; };
+		3986278D20B5108000063201 /* ServiceCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986278C20B5108000063201 /* ServiceCoreData.swift */; };
+		3986279020B510E300063201 /* JoinCommunity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3986278E20B510E300063201 /* JoinCommunity.xcdatamodeld */; };
+		3986279320B511B300063201 /* LocalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986279220B511B300063201 /* LocalEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,9 @@
 		3918443320B442180009256D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3918448520B442F20009256D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		3918449520B447560009256D /* ServiceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceApi.swift; sourceTree = "<group>"; };
+		3986278C20B5108000063201 /* ServiceCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCoreData.swift; sourceTree = "<group>"; };
+		3986278F20B510E300063201 /* JoinCommunity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JoinCommunity.xcdatamodel; sourceTree = "<group>"; };
+		3986279220B511B300063201 /* LocalEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 				3918442620B442180009256D /* JCApiClient.h */,
 				3918442720B442180009256D /* Info.plist */,
 				3918449820B447FB0009256D /* Model */,
+				3986279120B510F600063201 /* CoreDataModel */,
 				3918449720B447F20009256D /* Services */,
 			);
 			path = JCApiClient;
@@ -96,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				3918449520B447560009256D /* ServiceApi.swift */,
+				3986278C20B5108000063201 /* ServiceCoreData.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -106,6 +114,15 @@
 				3918448520B442F20009256D /* Event.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3986279120B510F600063201 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				3986278E20B510E300063201 /* JoinCommunity.xcdatamodeld */,
+				3986279220B511B300063201 /* LocalEvent.swift */,
+			);
+			path = CoreDataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,8 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3986279320B511B300063201 /* LocalEvent.swift in Sources */,
 				3918449620B447560009256D /* ServiceApi.swift in Sources */,
+				3986278D20B5108000063201 /* ServiceCoreData.swift in Sources */,
 				3918448620B442F20009256D /* Event.swift in Sources */,
+				3986279020B510E300063201 /* JoinCommunity.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +503,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3986278E20B510E300063201 /* JoinCommunity.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3986278F20B510E300063201 /* JoinCommunity.xcdatamodel */,
+			);
+			currentVersion = 3986278F20B510E300063201 /* JoinCommunity.xcdatamodel */;
+			path = JoinCommunity.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3918441A20B442180009256D /* Project object */;
 }

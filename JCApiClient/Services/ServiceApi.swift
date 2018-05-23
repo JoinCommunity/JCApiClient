@@ -31,37 +31,6 @@ public class ServiceApi<T: Codable> {
         
     }
     
-    public func get(route: String, completeCall: @escaping(T?) -> (), errorCall: @escaping (String) -> ()) {
-        let finalurl = self.urlApi + route
-        if let url = URL(string: finalurl) {
-            let session = URLSession(configuration: .default)
-            let request = URLRequest(url: url)
-            
-            let task = session.dataTask(with: request) { (data, response, errorApi) in
-                if let error = errorApi {
-                    DispatchQueue.main.async {
-                        errorCall(error.localizedDescription)
-                    }
-                }
-                else if let data = data {
-                    do {
-                        let object = try JSONDecoder().decode(T.self, from: data)
-                        DispatchQueue.main.async {
-                            completeCall(object)
-                        }
-                    }
-                    catch {
-                        DispatchQueue.main.async {
-                            errorCall(error.localizedDescription)
-                        }
-                    }
-                }
-            }
-            
-            task.resume()
-        }
-    }
-    
     public func get(route: String, completeCall: @escaping([T]?) -> (), errorCall: @escaping (String) -> ()) {
         let finalurl = self.urlApi + route
         if let url = URL(string: finalurl) {
