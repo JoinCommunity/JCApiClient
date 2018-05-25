@@ -28,6 +28,28 @@ public struct Event : Codable {
     //MARK: Local Api Service
     private static let service: ServiceApi = ServiceApi<Event>()
     
+    public static func searchEvents(terms: String, completeCall:@escaping([Event]?) ->(), errorCall:@escaping(String) -> ()) {
+        do {
+            let context : NSManagedObjectContext = ServiceCoreData.viewContext
+            let request : NSFetchRequest<LocalEvent> = LocalEvent.fetchRequest()
+            let predicate : NSPredicate = NSPredicate(format: "name contains[cd] %@ OR speaker contains[cd] %@ OR room contains[cd] %@", terms, terms, terms)
+            request.predicate = predicate
+            
+            let results = try context.fetch(request)
+            let returnData : NSMutableArray = []
+            for item in results {
+                let event = Event(eventId: item.eventId, name: item.name, subject: item.subject, speaker: item.speaker, room: item.room)
+                returnData.add(event)
+            }
+            
+            let returnArray = returnData.copy() as? [Event]
+            completeCall(returnArray)
+        } catch {
+            print(error.localizedDescription)
+            errorCall(error.localizedDescription)
+        }
+    }
+    
     public static func getAllEvents(completeCall: @escaping([Event]?) -> (), errorCall:@escaping(String) -> ()) {
         // get remote data
         service.get(route: "event", completeCall: { (returnData) in
