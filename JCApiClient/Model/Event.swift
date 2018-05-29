@@ -16,6 +16,8 @@ public struct Event : Codable {
     public var subject: String?
     public var speaker: String?
     public var room: String?
+    public var schedule: String?
+    public var asset: String?
     
     enum CodingKeys: String, CodingKey {
         case eventId = "_id"
@@ -23,6 +25,8 @@ public struct Event : Codable {
         case subject = "subject"
         case speaker = "speaker"
         case room = "room"
+        case schedule = "schedule"
+        case asset = "asset"
     }
     
     //MARK: Local Api Service
@@ -38,7 +42,7 @@ public struct Event : Codable {
             let results = try context.fetch(request)
             let returnData : NSMutableArray = []
             for item in results {
-                let event = Event(eventId: item.eventId, name: item.name, subject: item.subject, speaker: item.speaker, room: item.room)
+                let event = Event(eventId: item.eventId, name: item.name, subject: item.subject, speaker: item.speaker, room: item.room, schedule: item.schedule, asset: item.asset)
                 returnData.add(event)
             }
             
@@ -79,7 +83,7 @@ public struct Event : Codable {
             let results = try context.fetch(request)
             let returnData : NSMutableArray = []
             for item in results {
-                let event = Event(eventId: item.eventId, name: item.name, subject: item.subject, speaker: item.speaker, room: item.room)
+                let event = Event(eventId: item.eventId, name: item.name, subject: item.subject, speaker: item.speaker, room: item.room, schedule: item.schedule, asset: item.asset)
                 returnData.add(event)
             }
             
