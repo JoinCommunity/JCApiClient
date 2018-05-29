@@ -12,6 +12,7 @@
 		3918443420B442180009256D /* JCApiClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 3918442620B442180009256D /* JCApiClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3918448620B442F20009256D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918448520B442F20009256D /* Event.swift */; };
 		3918449620B447560009256D /* ServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918449520B447560009256D /* ServiceApi.swift */; };
+		397C48D620B84B00000D1359 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397C48D520B84B00000D1359 /* Comment.swift */; };
 		3986278D20B5108000063201 /* ServiceCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986278C20B5108000063201 /* ServiceCoreData.swift */; };
 		3986279020B510E300063201 /* JoinCommunity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3986278E20B510E300063201 /* JoinCommunity.xcdatamodeld */; };
 		3986279320B511B300063201 /* LocalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986279220B511B300063201 /* LocalEvent.swift */; };
@@ -36,6 +37,7 @@
 		3918443320B442180009256D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3918448520B442F20009256D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		3918449520B447560009256D /* ServiceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceApi.swift; sourceTree = "<group>"; };
+		397C48D520B84B00000D1359 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		3986278C20B5108000063201 /* ServiceCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCoreData.swift; sourceTree = "<group>"; };
 		3986278F20B510E300063201 /* JoinCommunity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JoinCommunity.xcdatamodel; sourceTree = "<group>"; };
 		3986279220B511B300063201 /* LocalEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalEvent.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				3918448520B442F20009256D /* Event.swift */,
+				397C48D520B84B00000D1359 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3986279320B511B300063201 /* LocalEvent.swift in Sources */,
+				397C48D620B84B00000D1359 /* Comment.swift in Sources */,
 				3918449620B447560009256D /* ServiceApi.swift in Sources */,
 				3986278D20B5108000063201 /* ServiceCoreData.swift in Sources */,
 				3918448620B442F20009256D /* Event.swift in Sources */,
