@@ -97,4 +97,32 @@ public class ServiceApi<T: Codable> {
             task.resume()
         }
     }
+    
+    //func getImage(urlString: String, fileName: String, completeCall: @escaping (UIImage?) -> (), errorCall: @escaping (String) -> ()) {
+    func getImage(urlString: String, fileName: String) {
+        let documentsDirectory = ServiceIO.getDocumentDirectoryUrl()
+        let localFileName = documentsDirectory.appendingPathComponent(fileName)
+        let fileManager = FileManager.default
+        let testFileExist = fileManager.fileExists(atPath: localFileName.path)
+        
+        if (!testFileExist) {
+            let imageURL = URL(string: urlString)
+            if imageURL != nil {
+                (URLSession(configuration: URLSessionConfiguration.default))
+                    .dataTask(with: imageURL!, completionHandler: { (imageData, response, error) in
+                        if error == nil {
+                            if let data = imageData {
+                                //let image : UIImage? = UIImage(data: data)
+                                try? data.write(to: localFileName)
+                                //completeCall(image)
+                            }
+                        }
+                        else{
+                            print(error!)
+                            //errorCall(error!.localizedDescription)
+                        }
+                    }).resume()
+            }
+        }
+    }
 }
