@@ -18,6 +18,18 @@ public struct Event : Codable {
     public var room: String?
     public var schedule: String?
     public var asset: String?
+    public var image: UIImage? {
+        get {
+            let data = ServiceIO.getFileData(name: eventId)
+            if let data = data {
+                let image = UIImage(data: data)
+                return image
+            }
+            else {
+                return nil
+            }
+        }
+    }
     
     enum CodingKeys: String, CodingKey {
         case eventId = "_id"
@@ -27,6 +39,9 @@ public struct Event : Codable {
         case room = "room"
         case schedule = "schedule"
         case asset = "asset"
+    }
+    
+    init() {
     }
     
     //MARK: Local Api Service
@@ -42,7 +57,16 @@ public struct Event : Codable {
             let results = try context.fetch(request)
             let returnData : NSMutableArray = []
             for item in results {
-                let event = Event(eventId: item.eventId, name: item.name, subject: item.subject, speaker: item.speaker, room: item.room, schedule: item.schedule, asset: item.asset)
+//                let event = Event()eventId: item.eventId, name: item.name, subject: item.subject, speaker: item.speaker, room: item.room, schedule: item.schedule, asset: item.asset)
+                var event = Event()
+                event.eventId = item.eventId
+                event.name = item.name
+                event.subject = item.subject
+                event.speaker = item.speaker
+                event.room = item.room
+                event.schedule = item.schedule
+                event.asset = item.asset
+                
                 returnData.add(event)
             }
             
@@ -65,6 +89,11 @@ public struct Event : Codable {
                 // For each result include locally
                 for item in array {
                     item.save()
+                    if let url = item.asset {
+                        if let name = item.eventId {
+                            service.getImage(urlString: url, fileName: name)
+                        }
+                    }
                 }
             }
             
@@ -83,7 +112,15 @@ public struct Event : Codable {
             let results = try context.fetch(request)
             let returnData : NSMutableArray = []
             for item in results {
-                let event = Event(eventId: item.eventId, name: item.name, subject: item.subject, speaker: item.speaker, room: item.room, schedule: item.schedule, asset: item.asset)
+//                let event = Event(eventId: item.eventId, name: item.name, subject: item.subject, speaker: item.speaker, room: item.room, schedule: item.schedule, asset: item.asset)
+                var event = Event()
+                event.eventId = item.eventId
+                event.name = item.name
+                event.subject = item.subject
+                event.speaker = item.speaker
+                event.room = item.room
+                event.schedule = item.schedule
+                event.asset = item.asset
                 returnData.add(event)
             }
             
@@ -105,6 +142,8 @@ public struct Event : Codable {
             localEvent.room = self.room
             localEvent.speaker = self.speaker
             localEvent.subject = self.subject
+            localEvent.schedule = self.schedule
+            localEvent.asset = self.asset
 
             try context.save()
         } catch {
