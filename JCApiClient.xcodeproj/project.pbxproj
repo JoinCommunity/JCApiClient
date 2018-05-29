@@ -16,6 +16,7 @@
 		3986278D20B5108000063201 /* ServiceCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986278C20B5108000063201 /* ServiceCoreData.swift */; };
 		3986279020B510E300063201 /* JoinCommunity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3986278E20B510E300063201 /* JoinCommunity.xcdatamodeld */; };
 		3986279320B511B300063201 /* LocalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986279220B511B300063201 /* LocalEvent.swift */; };
+		39F5358C20BD1F19002A0F12 /* ServiceIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5358B20BD1F19002A0F12 /* ServiceIO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		3986278C20B5108000063201 /* ServiceCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCoreData.swift; sourceTree = "<group>"; };
 		3986278F20B510E300063201 /* JoinCommunity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JoinCommunity.xcdatamodel; sourceTree = "<group>"; };
 		3986279220B511B300063201 /* LocalEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalEvent.swift; sourceTree = "<group>"; };
+		39F5358B20BD1F19002A0F12 /* ServiceIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceIO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				3918449520B447560009256D /* ServiceApi.swift */,
 				3986278C20B5108000063201 /* ServiceCoreData.swift */,
+				39F5358B20BD1F19002A0F12 /* ServiceIO.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39F5358C20BD1F19002A0F12 /* ServiceIO.swift in Sources */,
 				3986279320B511B300063201 /* LocalEvent.swift in Sources */,
 				397C48D620B84B00000D1359 /* Comment.swift in Sources */,
 				3918449620B447560009256D /* ServiceApi.swift in Sources */,
