@@ -14,7 +14,7 @@ public class ServiceCoreData {
     
     static var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let carKitBundle = Bundle(identifier: "br.com.construtor.JCApiClient")
+        let carKitBundle = Bundle(identifier: "br.com.construtor.joincommunityapiclient")
         
         let modelURL = carKitBundle!.url(forResource: "JoinCommunity", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
