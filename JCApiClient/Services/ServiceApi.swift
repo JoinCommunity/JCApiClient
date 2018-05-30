@@ -47,7 +47,7 @@ public class ServiceApi<T: Codable> {
                 else if let data = data {
                     do {
                         let decoder = JSONDecoder()
-                        decoder.dateDecodingStrategy = .iso8601
+                        //decoder.dateDecodingStrategy = .iso8601
                         // https://bugs.swift.org/browse/SR-5823
                         // TODO: Remove all this strategy when referal bug on swift will be fixed.
                         decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
@@ -87,14 +87,19 @@ public class ServiceApi<T: Codable> {
         }
     }
     
-    func post(route:String, entity: T, keyPath: String?, completeCall: @escaping (T?) -> (), errorCall: @escaping (String) -> ()) {
+    func post(route:String, entity: T, keyPath: String, completeCall: @escaping (T?) -> (), errorCall: @escaping (String) -> ()) {
         
         let finalurl = self.urlApi + route
         if let url = URL(string: finalurl) {
             let session = URLSession(configuration: .default)
             var request = URLRequest(url: url)
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
             request.httpMethod = "POST"
-            request.httpBody = try? JSONEncoder().encode(entity)
+            let data = try? encoder.encode(entity)
+            print(String(data: data!, encoding: .utf8)!)
+            request.httpBody = data
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             
             let task = session.dataTask(with: request) { (data, response, errorApi) in
                 if let error = errorApi {

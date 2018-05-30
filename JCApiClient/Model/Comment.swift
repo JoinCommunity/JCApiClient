@@ -26,6 +26,10 @@ public struct Comment : Codable {
         case createdAt = "createAt"
     }
     
+    public init() {
+        
+    }
+    
     //MARK: Local Api Service
     private static let service: ServiceApi = ServiceApi<Comment>()
     
@@ -51,7 +55,12 @@ public struct Comment : Codable {
         }
     }
     
-    public func createComment() {
-        
+    public func createComment(completeCall: @escaping(Comment?) -> (), errorCall:@escaping(String) -> ()) {
+        let service: ServiceApi = ServiceApi<Comment>()
+        service.post(route: "comment", entity: self, keyPath: "data", completeCall: { (returnObject) in
+            completeCall(returnObject)
+        }) { (errorMessage) in
+            errorCall(errorMessage)
+        }
     }
 }
