@@ -51,13 +51,12 @@ public struct Event : Codable {
         do {
             let context : NSManagedObjectContext = ServiceCoreData.viewContext
             let request : NSFetchRequest<LocalEvent> = LocalEvent.fetchRequest()
-            let predicate : NSPredicate = NSPredicate(format: "name contains[cd] %@ OR speaker contains[cd] %@ OR room contains[cd] %@", terms, terms, terms)
+            let predicate : NSPredicate = NSPredicate(format: "name contains[cd] %@ OR speaker contains[cd] %@ OR room contains[cd] %@ OR schedule contains[cd] %@ OR subject contains[cd] %@", terms, terms, terms, terms, terms)
             request.predicate = predicate
             
             let results = try context.fetch(request)
             let returnData : NSMutableArray = []
             for item in results {
-//                let event = Event()eventId: item.eventId, name: item.name, subject: item.subject, speaker: item.speaker, room: item.room, schedule: item.schedule, asset: item.asset)
                 var event = Event()
                 event.eventId = item.eventId
                 event.name = item.name
@@ -112,7 +111,6 @@ public struct Event : Codable {
             let results = try context.fetch(request)
             let returnData : NSMutableArray = []
             for item in results {
-//                let event = Event(eventId: item.eventId, name: item.name, subject: item.subject, speaker: item.speaker, room: item.room, schedule: item.schedule, asset: item.asset)
                 var event = Event()
                 event.eventId = item.eventId
                 event.name = item.name
